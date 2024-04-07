@@ -9,7 +9,6 @@ public class Board {
         displayBoard();
     }
 
-    // loops through 2D array and sets every char to the default emoji
     public void clearBoard() {
         for (int i = 0; i < board.length; i++) {
             for (int j = 0; j < board[i].length; j++) {
@@ -18,7 +17,6 @@ public class Board {
         }
     }
 
-    // prints the board
     public void displayBoard() {
         for (int i = 0; i < board.length; i++) {
             for (int j = 0; j < board[i].length; j++) {
@@ -29,19 +27,16 @@ public class Board {
         System.out.println();
     }
 
-    // places first generation of bacteria on board
     public void placeFirstGen() {
         board[3][6] = new Cell(true);
         board[1][5] = new Cell(true);
     }
 
-    // counts the number of neighbors who are alive, returns the result as an
-    // integer
-    // counts all eighth neighboring spaces
     public int countLiveNeighbors(int a, int b) {
         int count = 0;
         for (int i = a - 1; i <= a + 1; i++) {
             for (int j = b - 1; j <= b + 1; j++) {
+                //looping through the board
                 if (i > 0 && i < board.length - 1) {
                     if (j > 0 && j < board[0].length - 1) {
                         // check all the diagnols
